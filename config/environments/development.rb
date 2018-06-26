@@ -49,6 +49,13 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  #email
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = 'localhost:3000' # Don't use this literally; use your local dev host instead
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
